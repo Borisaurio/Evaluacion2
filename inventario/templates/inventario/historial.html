@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Historial de Movimientos</title>
+</head>
+
+<body>
+    <h1>Historial de Movimientos - {{ producto.nombre }}</h1>
+    <table border="1">
+        <tr>
+            <th>Fecha</th>
+            <th>Tipo</th>
+            <th>Cantidad</th>
+            <th>Observación</th>
+        </tr>
+        {% for movimiento in movimientos %}
+        <tr>
+            <td>{{ movimiento.fecha }}</td>
+            <td>{{ movimiento.tipo }}</td>
+            <td>{{ movimiento.cantidad }}</td>
+            <td>{{ movimiento.observacion }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/inventario/productos/">Volver a lista</a>
+</body>
+
+</html>

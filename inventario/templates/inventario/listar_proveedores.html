@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Proveedores</title>
+</head>
+
+<body>
+    <h1>Lista de Proveedores</h1>
+    <a href="/inventario/proveedores/nuevo/">Crear Proveedor</a>
+    <table border="1">
+        <tr>
+            <th>Razon Social</th>
+            <th>RUT</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
+        {% for proveedor in proveedores %}
+        <tr>
+            <td>{{ proveedor.razon_social }}</td>
+            <td>{{ proveedor.rut }}</td>
+            <td>{{ proveedor.email }}</td>
+            <td>{{ proveedor.telefono }}</td>
+            <td>
+                <a href="/inventario/proveedores/{{ proveedor.id }}/">Ver</a> |
+                <a href="/inventario/proveedores/{{ proveedor.id }}/eliminar/">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

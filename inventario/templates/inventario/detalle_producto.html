@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Detalle Producto</title>
+</head>
+
+<body>
+    <h1>Detalle del Producto</h1>
+    <p><strong>SKU:</strong> {{ producto.sku }}</p>
+    <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+    <p><strong>Categoría:</strong> {{ producto.categoria }}</p>
+    <p><strong>Proveedor:</strong> {{ producto.proveedor }}</p>
+    <p><strong>Stock Actual:</strong> {{ producto.stock_actual }}</p>
+
+    <h2>Historial de Movimientos</h2>
+    <ul>
+        {% for movimiento in movimientos %}
+        <li>{{ movimiento.fecha }} - {{ movimiento.tipo }} - {{ movimiento.cantidad }} - {{ movimiento.observacion }}
+        </li>
+        {% empty %}
+        <li>No hay movimientos</li>
+        {% endfor %}
+    </ul>
+    <a href="/inventario/productos/">Volver a lista</a>
+</body>
+
+</html>

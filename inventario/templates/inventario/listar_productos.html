@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Productos</title>
+</head>
+
+<body>
+    <h1>Lista de Productos</h1>
+    <a href="/inventario/productos/nuevo/">Crear Producto</a>
+    <table border="1">
+        <tr>
+            <th>SKU</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Proveedor</th>
+            <th>Stock Actual</th>
+            <th>Acciones</th>
+        </tr>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto.sku }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.categoria }}</td>
+            <td>{{ producto.proveedor }}</td>
+            <td>{{ producto.stock_actual }}</td>
+            <td>
+                <a href="/inventario/productos/{{ producto.id }}/">Ver</a> |
+                <a href="/inventario/productos/{{ producto.id }}/eliminar/">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
